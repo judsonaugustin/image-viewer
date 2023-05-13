@@ -18,26 +18,32 @@ function App() {
     const imgSlider = imgSlides[index];
     setImageData(imgSlider);
   };
-  //Function used to go to previous image
+  //Event handler used to go to previous image
   const handlePrevious = () => {
+    // Find the index of the current image slide in the imgSlides array
     const currentIndex = imgSlides.findIndex((img) => img.id === imageData.id);
     if (currentIndex > 0) {
+      // If the current slide is not the first one, show the previous slide
       const previousIndex = currentIndex - 1;
       const previousImg = imgSlides[previousIndex];
       setImageData(previousImg);
     } else {
+      // If the current slide is the first one, show the last slide
       const lastImg = imgSlides[imgSlides.length - 1];
       setImageData(lastImg);
     }
   };
-  //Function used to go to next image
+  //Event hadler used to go to next image
   const handleNext = () => {
+    // Find the index of the current image slide in the imgSlides array
     const currentIndex = imgSlides.findIndex((img) => img.id === imageData.id);
     if (currentIndex < imgSlides.length - 1) {
+      // If the current slide is not the last one, show the next slide
       const nextIndex = currentIndex + 1;
       const nextImg = imgSlides[nextIndex];
       setImageData(nextImg);
     } else {
+      // If the current slide is the last one, show the first slide
       const firstImg = imgSlides[0];
       setImageData(firstImg);
     }
