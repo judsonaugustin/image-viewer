@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  //image links ( these images are from one of my website )
   const imgSlides = [
     { id: 0, value: "https://sanilkumarassociates.com/images/bg/s2.jpg" },
     { id: 1, value: "https://sanilkumarassociates.com/images/bg/s3.jpg" },
@@ -9,11 +10,15 @@ function App() {
     { id: 3, value: "https://sanilkumarassociates.com/images/bg/s5.jpg" },
     { id: 4, value: "https://sanilkumarassociates.com/images/bg/s6.jpg" },
   ];
+  
+  //State variable used for which image to display
   const [imageData, setImageData] = useState(imgSlides[0]);
+  //Function used to handle when a thumbnail is clicked 
   const handleClick = (index) => {
     const imgSlider = imgSlides[index];
     setImageData(imgSlider);
   };
+  //Function used to go to previous image
   const handlePrevious = () => {
     const currentIndex = imgSlides.findIndex((img) => img.id === imageData.id);
     if (currentIndex > 0) {
@@ -25,6 +30,7 @@ function App() {
       setImageData(lastImg);
     }
   };
+  //Function used to go to next image
   const handleNext = () => {
     const currentIndex = imgSlides.findIndex((img) => img.id === imageData.id);
     if (currentIndex < imgSlides.length - 1) {
