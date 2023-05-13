@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  //image links ( these images are from one of my website )
+  //Array of image objects , each containing an id and a value and URL of the image( these images are from one of my website )
   const imgSlides = [
     { id: 0, value: "https://sanilkumarassociates.com/images/bg/s2.jpg" },
     { id: 1, value: "https://sanilkumarassociates.com/images/bg/s3.jpg" },
